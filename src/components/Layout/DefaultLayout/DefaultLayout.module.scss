@@ -4,7 +4,7 @@
   align-items: center;
 }
 .container {
-  width: 1150px;
+  width: var(--default-layout-width);
   height: 100px;
   background-color: #333;
   display: flex;
