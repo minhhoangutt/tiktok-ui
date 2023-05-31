@@ -1,14 +1,15 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;900&display=swap');
 
 :root {
     --primary: #fe2c55;
     --black: #000;
     --white: #fff;
-    --text-color: #333;
+    --text-color: #161823;
     // Default layout
     --default-layout-header-height: 60px;
     --default-layout-width: 1150px;
+    --default-layout-horizontal-spacer: 24px;
 }
 * {
     box-sizing: border-box;
@@ -34,4 +35,18 @@ input,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+//Custom tippy
+body .tippy-box {
+    border-radius: 8px;
+    font-weight: 600;
+    font-style: 1.6rem;
+    line-height: 2.2rem;
+    background-color: rgba(84, 84, 84, 0.92);
+}
+body .tippy-arrow {
+    color: rgba(84, 84, 84, 0.92);
+}
+body .tippy-content {
+    padding: 8px 9px;
 }
