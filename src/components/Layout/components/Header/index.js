@@ -6,10 +6,11 @@ import 'tippy.js/dist/tippy.css'; // optional
 import { Wrapper as PopperWrapper } from '~/components/Layout/Popper';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Menu from '~/components/Layout/Popper/Menu';
+import Image from '~/components/Image';
+import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import {
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faSignOut,
     faEarthAsia,
@@ -90,6 +91,7 @@ function Header() {
             separate: true,
         },
     ];
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -128,9 +130,19 @@ function Header() {
                 <div className={cx('actions')}>
                     {curUser ? (
                         <>
-                            <Tippy delay={[0, 200]} content="Up load videos" placement="bottom">
+                            <Tippy content="Upload videos" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload}></FontAwesomeIcon>
+                                    <UploadIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy content="Message" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy content="Inbox" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <InboxIcon />
                                 </button>
                             </Tippy>
                         </>
@@ -143,7 +155,8 @@ function Header() {
 
                     <Menu items={curUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                         {curUser ? (
-                            <img
+                            <Image
+                                // fallback="https://fullstack.edu.vn/static/media/f8-icon.18cd71cfcfa33566a22b.png"
                                 className={cx('user-avatar')}
                                 src="https://scontent.fhan3-3.fna.fbcdn.net/v/t39.30808-1/319675017_492860606279447_8932509317476251430_n.jpg?stp=dst-jpg_p100x100&amp;_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=7206a8&amp;_nc_ohc=-vo8HL6WdGYAX-lL0Mu&amp;_nc_ad=z-m&amp;_nc_cid=0&amp;_nc_ht=scontent.fhan3-3.fna&amp;oh=00_AfBz0072ZkHWUl3PpVR5P1kWGaBzHJkqcOceb0JQjKsTdw&amp;oe=647A270F"
                                 alt="Nguyen Van A"
