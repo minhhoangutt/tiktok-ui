@@ -4,9 +4,9 @@ import images from '~/assets/images';
 import Button from '~/components/Button';
 import Search from '../Search';
 import 'tippy.js/dist/tippy.css'; // optional
-import routesConfig from '~/config/routes';
+import config from '~/config';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Menu from '~/components/Layout/Popper/Menu';
+import Menu from '~/layouts/Popper/Menu';
 import Image from '~/components/Image';
 import { InboxIcon, MessageIcon, UploadIcon } from '~/components/Icons';
 import {
@@ -85,7 +85,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className="cx('logo-link')">
+                <Link to={config.routes.home} className="cx('logo-link')">
                     <img src={images.logo} alt="TikTok"></img>
                 </Link>
 
